@@ -1,0 +1,68 @@
+\documentclass{beamer} % this tells LaTeX what type of document to make
+
+% Add the graphicx package so that we can include images
+\usepackage{graphicx}
+
+\begin{document}
+<<setup, include=FALSE>>=
+library(knitr)
+opts_chunk$set(fig.path='figure/beamer-',fig.align='center',fig.show='hold',size='footnotesize')
+@
+\begin{frame}[fragile]{Introduction}
+Hello \LaTeX!
+
+My name is Jonah Garbin!  I was born on January 11, 1996, in Lincoln, Nebraska.  I am currently trying to attain my Ph.D in Educational Psychology, with a specialization in Qualitative, Quantitative, Psychometric Methods.  I am currently a 2nd year student, and I expect I will complete my program in 3-4 years time!
+\end {frame}
+
+
+% Include a figure of your favorite animal
+\begin{frame}[fragile]{Favorite Animal}
+\section{Favorite Animal}
+\begin{figure}[h]
+\centering
+\includegraphics[width=.5\textwidth]{Ernie.JPG}
+\centering
+
+\caption{This is Ernie, he is my first boy, and my absolute favorite animal!}
+\end{figure}
+\end{frame}
+
+% Add your favorite plot
+\begin{frame}[fragile]{Favorite Plot}
+<<funplot,fig.width=10,fig.height=10,out.width='.45\\linewidth'   , echo=FALSE, message=FALSE, warning=FALSE, fig.align='center', fig.cap="This thing is so AWFUL!...">>=
+if (!"palmerpenguins" %in% installed.packages()) {
+  remotes::install_github("allisonhorst/palmerpenguins")
+}
+library(palmerpenguins)
+library(cowplot)
+library(magick)
+library(mclust)
+data(banknote)
+library(ggplot2)
+
+theme_set(theme_cowplot())
+
+ugly_graph <- ggplot(penguins,
+       aes(x = body_mass_g, y = bill_length_mm, color = species)) +
+  geom_line(aes(size=species))
+
+ggdraw()+
+  draw_image("https://cdn.wallpapersafari.com/58/89/yYXt36.jpg")+
+  draw_plot(ugly_graph)
+@
+\end{frame}
+
+%Add your CV
+%\begin{frame}[fragile]{CV}
+%\url {https://github.com/stat850-unl/10-presentation-jgarbin2/blob/master/CV.pdf}
+
+%\end{frame}
+
+\begin{frame}[fragile]{FUN}
+\Huge\LaTeX
+
+% In extremely small italic text, print your name
+
+\tiny\emph{Jonah Garbin}
+\end{frame}
+\end{document}
