@@ -1,0 +1,48 @@
+hw10_Rmarkdown.pdf
+========================================================
+author: Jonah Garbin
+date: October 26, 2020
+autosize: true
+
+Introduction
+========================================================
+
+My name is Jonah Garbin! I was born on January 11, 1996, in Lincoln, Nebraska. I am currently trying to attain my Ph.D in Educational Psychology, with a specialization in Qualitative, Quantitative, Psychometric Methods. I am currently a 2nd year student, and I expect I will complete my program in 3-4 years time!
+
+Picture of Favorite Animal
+========================================================
+```{r, echo=FALSE}
+library(ggplot2)
+library(cowplot)
+library(magick)
+ggdraw()+
+  draw_image("Ernie.JPG")
+```
+
+Favorite Plot
+========================================================
+
+```{r, echo=FALSE}
+if (!"palmerpenguins" %in% installed.packages()) {
+  remotes::install_github("allisonhorst/palmerpenguins")
+}
+library(palmerpenguins)
+library(ggplot2)
+library(cowplot)
+library(magick)
+
+theme_set(theme_cowplot())
+
+ugly_graph <- ggplot(penguins,
+       aes(x = body_mass_g, y = bill_length_mm, color = species)) +
+  geom_line(aes(size=species))
+
+ggdraw()+
+  draw_image("https://cdn.wallpapersafari.com/58/89/yYXt36.jpg")+
+  draw_plot(ugly_graph)
+```
+
+Link to CV
+========================================================
+
+https://github.com/stat850-unl/10-presentation-jgarbin2/blob/master/CV.pdf
