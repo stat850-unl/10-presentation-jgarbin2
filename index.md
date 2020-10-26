@@ -1,5 +1,5 @@
 ## Jonah's HW
 
-[Slides with Rpres](HW10_RMarkdown.html)
+- [Slides with Rpres](HW10_RMarkdown.html)
 
-[CV](CV.pdf)
+- [CV](CV.pdf)
