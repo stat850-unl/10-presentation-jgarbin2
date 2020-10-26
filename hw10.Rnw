@@ -12,19 +12,14 @@ opts_chunk$set(fig.path='figure/beamer-',fig.align='center',fig.show='hold',size
 Hello \LaTeX!
 
 My name is Jonah Garbin!  I was born on January 11, 1996, in Lincoln, Nebraska.  I am currently trying to attain my Ph.D in Educational Psychology, with a specialization in Qualitative, Quantitative, Psychometric Methods.  I am currently a 2nd year student, and I expect I will complete my program in 3-4 years time!
-\end {frame}
+\end{frame}
 
 
 % Include a figure of your favorite animal
 \begin{frame}[fragile]{Favorite Animal}
 \section{Favorite Animal}
-\begin{figure}[h]
-\centering
 \includegraphics[width=.5\textwidth]{Ernie.JPG}
-\centering
 
-\caption{This is Ernie, he is my first boy, and my absolute favorite animal!}
-\end{figure}
 \end{frame}
 
 % Add your favorite plot
@@ -65,4 +60,5 @@ ggdraw()+
 
 \tiny\emph{Jonah Garbin}
 \end{frame}
+
 \end{document}
